@@ -13,7 +13,7 @@ export default async function Navbar() {
       <MobileSidebar isPro={isPro!} apiLimitCount={apiLimitCount} />
 
       <div className="flex w-full justify-end">
-        <UserButton afterSignOutUrl="/" />
+        <UserButton />
       </div>
     </div>
   );

@@ -3,10 +3,21 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "googleusercontent.com",
+        protocol: 'https',
+        hostname: "lh3.googleusercontent.com", // Google's specific avatar host
       },
-      { hostname: "oaidalleapiprodscus.blob.core.windows.net" },
-      { hostname: "cdn.openai.com" },
+      {
+        protocol: 'https',
+        hostname: "avatars.githubusercontent.com", // Add this for GitHub avatars
+      },
+      {
+        protocol: 'https',
+        hostname: "oaidalleapiprodscus.blob.core.windows.net",
+      },
+      {
+        protocol: 'https',
+        hostname: "cdn.openai.com",
+      },
     ],
   },
 };

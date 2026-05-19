@@ -4,7 +4,8 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
+
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -33,7 +34,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    "prisma.config.ts" // <--- Add this line
   ],
   "exclude": [
     "node_modules"

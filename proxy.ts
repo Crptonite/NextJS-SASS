@@ -1,3 +1,4 @@
+// proxy.ts (formerly middleware.ts)
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
 const isProtectedRoute = createRouteMatcher([
@@ -15,12 +16,13 @@ const isProtectedRoute = createRouteMatcher([
   '/api/video(.*)'
 ]);
 
-export default clerkMiddleware((auth, req) => {
+export default clerkMiddleware(async (auth, req) => {
   if (isProtectedRoute(req)) {
-    auth.protect();
+    await auth.protect(); // Ensure this is awaited in newer Clerk versions
   }
 });
 
 export const config = {
+  // Next.js internal paths and static files are excluded
   matcher: ["/((?!_next|.*\\..*).*)"],
 };
